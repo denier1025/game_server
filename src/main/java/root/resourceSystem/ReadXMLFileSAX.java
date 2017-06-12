@@ -15,7 +15,6 @@ public class ReadXMLFileSAX {
 
             SaxHandler handler = new SaxHandler();
             saxParser.parse(xmlFile, handler);
-
             return handler.getObject();
         } catch(Exception e) {
             throw new Exception(e);

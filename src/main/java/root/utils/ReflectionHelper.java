@@ -18,15 +18,15 @@ public final class ReflectionHelper {
         }
     }
 
-    public static void setFieldValue(Object obj, String fieldName, String fieldValue) throws ReflectiveOperationException {
+    public static void setFieldValue(Object obj, String fieldName, String value) throws ReflectiveOperationException {
         try {
             Field field = obj.getClass().getDeclaredField(fieldName);
             field.setAccessible(true);
 
             if (field.getType().equals(String.class)) {
-                field.set(obj, fieldValue);
+                field.set(obj, value);
             } else if (field.getType().equals(int.class)) {
-                field.set(obj, Integer.decode(fieldValue));
+                field.set(obj, Integer.decode(value));
             }
 
             field.setAccessible(false);

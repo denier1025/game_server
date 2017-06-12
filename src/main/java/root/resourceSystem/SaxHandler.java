@@ -12,11 +12,11 @@ public class SaxHandler extends DefaultHandler {
 
     private static final String CLASSNAME = "class";
     private String element;
-    private Object object = new Object();
+    private Object object;
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        if(qName != CLASSNAME) {
+        if(!qName.equals(CLASSNAME)) {
             element = qName;
         } else {
             String className = attributes.getValue(0);

@@ -1,7 +1,5 @@
 package root.VFS;
 
-import root.VFS.VFS;
-
 import java.io.*;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -74,7 +72,7 @@ public class VFSImpl implements VFS {
 
     private class FileIterator implements Iterator<String> {
 
-        private Queue<File> files = new LinkedList<File>();
+        private Queue<File> files = new LinkedList<>();
 
         public FileIterator(String path) {
             files.add(new File(root + path));

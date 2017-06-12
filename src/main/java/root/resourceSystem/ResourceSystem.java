@@ -1,5 +1,7 @@
 package root.resourceSystem;
 
+import root.items.Hummer;
+
 import java.io.*;
 
 /**
@@ -23,6 +25,16 @@ public class ResourceSystem {
             object = ois.readObject();
         } catch(IOException | ClassNotFoundException e) {
             throw new Exception(e);
+        }
+        return object;
+    }
+
+    public static Object workWithSAX(String xmlFile) {
+        Object object = null;
+        try {
+            object = ReadXMLFileSAX.readXML(xmlFile);
+        } catch (Exception e) {
+            //todo: log("Exception in -->" + this.getClass() + "-->workWithSAX()-->ReadXMLFileSAX.readXML("*.xml"). Stack: " + e)
         }
         return object;
     }

@@ -7,11 +7,13 @@ import root.VFS.VFS;
 import root.VFS.VFSImpl;
 import root.base.MessageSystem;
 import root.base.ServiceContext;
+import root.items.Hummer;
 import root.messageSystem.MessageSystemImpl;
 import root.accountService.AccountServiceImpl;
 import root.frontend.FrontendImpl;
 import root.index_html.Index;
-import root.utils.TimeHelper;
+import root.resourceSystem.ResourceSystem;
+import root.utils.ReflectionHelper;
 import root.utils.TimerService;
 
 /**
@@ -20,6 +22,17 @@ import root.utils.TimerService;
 public class Main {
 
     public static void main(String[] args) throws Exception {
+
+//        Object instance = ReflectionHelper.createInstance("root.items.Hummer");
+//        System.out.println(instance);
+//        ReflectionHelper.setFieldValue(instance, "id", "3");
+//        ReflectionHelper.setFieldValue(instance, "name", "Alex");
+//        ReflectionHelper.setFieldValue(instance, "strength", "555");
+//        System.out.println(instance);
+
+        ResourceSystem resourceSystem = new ResourceSystem();
+        Hummer hummer = (Hummer) resourceSystem.workWithSAX("src/main/resources/items/Hummer.xml");
+        System.out.println(hummer);
 
         MessageSystem messageSystem = new MessageSystemImpl();
         TimerService timerService = TimerService.getInstance();
