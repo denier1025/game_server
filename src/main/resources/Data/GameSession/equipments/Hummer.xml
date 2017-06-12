@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class classpath="root.items.Hummer">
+<class classpath="root.GameSession.equipments.Hummer">
     <id>100</id>
     <name>TheBestOfThisYear</name>
     <strength>555</strength>

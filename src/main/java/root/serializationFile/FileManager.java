@@ -1,13 +1,14 @@
-package root.resourceSystem;
-
-import root.items.Hummer;
+package root.serializationFile;
 
 import java.io.*;
 
 /**
  * Created by Alexey on 11.06.2017.
  */
-public class ResourceSystem {
+public final class FileManager {
+
+    private FileManager() {
+    }
 
     public static void writeToBinFile(String filePath, Object serObject) throws IOException {
         try(FileOutputStream fos = new FileOutputStream(filePath);
@@ -25,16 +26,6 @@ public class ResourceSystem {
             object = ois.readObject();
         } catch(IOException | ClassNotFoundException e) {
             throw new Exception(e);
-        }
-        return object;
-    }
-
-    public static Object workWithSAX(String xmlFile) {
-        Object object = null;
-        try {
-            object = ReadXMLFileSAX.readXML(xmlFile);
-        } catch (Exception e) {
-            //todo: log("Exception in -->" + this.getClass() + "-->workWithSAX()-->ReadXMLFileSAX.readXML("*.xml"). Stack: " + e)
         }
         return object;
     }

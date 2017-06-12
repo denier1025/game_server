@@ -1,4 +1,4 @@
-package root.items;
+package root.GameSession.equipments;
 
 /**
  * Created by Alexey on 12.06.2017.

@@ -1,4 +1,4 @@
-package root.resourceSystem;
+package root.resource;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;

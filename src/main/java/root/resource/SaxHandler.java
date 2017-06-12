@@ -1,4 +1,4 @@
-package root.resourceSystem;
+package root.resource;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

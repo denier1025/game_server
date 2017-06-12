@@ -10,7 +10,8 @@ public class TimerService {
 
     private static TimerService timerService;
     private Timer timer;
-    private static Object lockForTimer = new Object();
+    private static Object locker1 = new Object();
+    private static Object locker2 = new Object();
 
     private TimerService() {
 
@@ -18,7 +19,7 @@ public class TimerService {
 
     public static TimerService getInstance() {
         if(timerService == null) {
-            synchronized (TimerService.class) {
+            synchronized (locker1) {
                 if(timerService == null) {
                     timerService = new TimerService();
                 }
@@ -33,7 +34,7 @@ public class TimerService {
 
     public void scheduleTask(TimerTask timerTask, long delay, long period) {
         if(this.timer == null) {
-            synchronized (lockForTimer) {
+            synchronized (locker2) {
                 if(this.timer == null) {
                     this.timer = new Timer();
                 }

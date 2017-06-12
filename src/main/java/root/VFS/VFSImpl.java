@@ -1,5 +1,7 @@
 package root.VFS;
 
+import root.base.VFS;
+
 import java.io.*;
 import java.util.Iterator;
 import java.util.LinkedList;
