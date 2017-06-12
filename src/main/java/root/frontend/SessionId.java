@@ -5,5 +5,5 @@ package root.frontend;
  */
 public class SessionId {
 
-    
+
 }

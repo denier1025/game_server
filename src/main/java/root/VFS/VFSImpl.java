@@ -12,7 +12,10 @@ import java.util.Queue;
  */
 public class VFSImpl implements VFS {
 
-    private String root;
+    private String root = "./";
+
+    public VFSImpl() {
+    }
 
     public VFSImpl(String root) {
         this.root = root;
